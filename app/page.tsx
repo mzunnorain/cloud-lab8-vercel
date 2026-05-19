@@ -1,6 +1,16 @@
 import Image from "next/image";
 
 export default function Home() {
+  const labs = [
+    { id: 1, name: "Lab 1: Next.js Setup", description: "Project initialization and configuration" },
+    { id: 2, name: "Lab 2: Environment Variables", description: "Setting up .env.local configuration" },
+    { id: 3, name: "Lab 3: Vercel Deployment", description: "Deploying application to Vercel" },
+    { id: 4, name: "Lab 4: Environment Variables in Vercel", description: "Managing secrets and public variables" },
+    { id: 5, name: "Lab 5: Serverless API Routes", description: "Creating hello, student, and submit endpoints" },
+    { id: 6, name: "Lab 6: Edge Functions & Middleware", description: "Custom headers and geo-location features" },
+    { id: 7, name: "Lab 7: Preview Deployments", description: "Creating feature branches with preview URLs" },
+  ];
+
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
@@ -16,7 +26,18 @@ export default function Home() {
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
             M.Zunnorain
             01-131232-072
-          </h1> 
+          </h1>
+          <div className="w-full">
+            <h2 className="text-2xl font-semibold text-black dark:text-zinc-50 mb-4">Completed Labs</h2>
+            <ul className="space-y-3">
+              {labs.map((lab) => (
+                <li key={lab.id} className="p-3 border border-zinc-200 dark:border-zinc-700 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-900 transition">
+                  <div className="font-semibold text-zinc-900 dark:text-zinc-100">{lab.name}</div>
+                  <div className="text-sm text-zinc-600 dark:text-zinc-400">{lab.description}</div>
+                </li>
+              ))}
+            </ul>
+          </div>
           <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
             Looking for a starting point or more instructions? Head over to{" "}
             <a
