@@ -1,12 +1,15 @@
 import Image from "next/image";
 
 export default function Home() { 
+  const appName = process.env.NEXT_PUBLIC_APP_NAME;
+  const studentName = process.env.NEXT_PUBLIC_STUDENT_NAME;
+
   return ( 
     <main 
       style={{
         textAlign: "center", 
         marginTop: "10%",
-        background: "linear-gradient(135deg, #cbced7 0%, #2dda27 50%, #000000 100%)",
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
         minHeight: "100vh",
         padding: "40px 20px",
         fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
@@ -20,7 +23,7 @@ export default function Home() {
         textShadow: "2px 2px 4px rgba(0,0,0,0.2)",
         letterSpacing: "1px"
       }}>
-        Lab 8 — Vercel Deployment
+        {appName || "Lab 8 — Vercel Deployment"}
       </h1> 
       <p style={{
         color: "#fff",
@@ -29,7 +32,7 @@ export default function Home() {
         fontWeight: "500",
         textShadow: "1px 1px 2px rgba(0,0,0,0.2)"
       }}>
-        Name: M.Zunnorain Ali
+        Name: {studentName || "M.Zunnorain Ali"}
       </p> 
       <p style={{
         color: "#fff",
